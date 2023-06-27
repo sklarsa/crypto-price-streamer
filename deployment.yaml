@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crypto-scraper
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: crypto-scraper
+  template:
+    metadata:
+      labels:
+        app: crypto-scraper
+    spec:
+      containers:
+      - name: crypto-scraper
+        image: sklarsa/crypto-price-streamer:0.0.8
+        command: ["poetry", "run", "python", "main.py"]
+        args: ["-H", "questdb-sample.default.svc.cluster.local", "BTC", "ETH"]
+        resources:
+          limits:
+            memory: "256Mi"
