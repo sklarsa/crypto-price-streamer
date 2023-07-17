@@ -9,6 +9,7 @@ packages = [{include = "crypto_price_streamer"}]
 [tool.poetry.dependencies]
 python = "^3.10"
 cryptofeed = "^2.3.2"
+psycopg = "^3.1.9"
 
 
 [build-system]

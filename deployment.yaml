@@ -17,7 +17,9 @@ spec:
       - name: crypto-scraper
         image: sklarsa/crypto-price-streamer:0.0.8
         command: ["poetry", "run", "python", "main.py"]
-        args: ["-H", "questdb-sample.default.svc.cluster.local", "BTC", "ETH", "ADA", "DOGE", "LTC", "SHIB", "FIL"]
+        args: ["-H", "questdb-sample.default.svc.cluster.local", "BTC", "ETH", "ADA", "DOGE", "LTC", "SHIB", "FIL", "USDT", "XRP",  "SOL", "MATIC", "DOT", "AVAX", "LINK", "ATOM", "ETC", "AAVE", "OP", "BIT","ZEC"]
         resources:
           limits:
             memory: "256Mi"
+          requests:
+            memory: "128Mi"
