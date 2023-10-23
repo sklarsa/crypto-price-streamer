@@ -37,13 +37,6 @@ def main():
         )
         f.add_feed(
             Coinbase(
-                channels=[L2_BOOK],
-                symbols=[pair],
-                callbacks={L2_BOOK: BookQuest(host=parsed_args.host, port=parsed_args.port)},
-            )
-        )
-        f.add_feed(
-            Coinbase(
                 channels=[TICKER],
                 symbols=[pair],
                 callbacks={TICKER: TickerQuest(host=parsed_args.host, port=parsed_args.port)},
